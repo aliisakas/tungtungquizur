@@ -1,0 +1,3 @@
+C:/Users/Алиса/source/repos/tungtungquizur/build/CMakeFiles/server.dir
+C:/Users/Алиса/source/repos/tungtungquizur/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/Алиса/source/repos/tungtungquizur/build/CMakeFiles/ZERO_CHECK.dir
