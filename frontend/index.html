@@ -1,16 +1,53 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <!-- Базовые метаданные -->
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Заголовок страницы -->
     <title>English Cards - Главная</title>
+    
+    <!-- Подключение стилей -->
     <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Иконка сайта (можно добавить позже) -->
+    <!-- <link rel="icon" href="favicon.ico"> -->
 </head>
 <body>
+    <!-- Основной контейнер приложения -->
     <div class="app">
+        <!-- Главный заголовок -->
         <h1>English Cards</h1>
+        
+        <!-- Описание приложения -->
         <p>Приложение для изучения английских слов</p>
-        <button id="start-btn">Начать</button>
+        
+        <!-- Кнопка начала работы - основной элемент -->
+        <button id="start-btn" class="main-button">Начать</button>
+        
+        <!-- Дополнительная секция (можно раскомментировать при необходимости) -->
+        <!--
+        <div class="features">
+            <h2>Возможности:</h2>
+            <ul>
+                <li>Тематические подборки слов</li>
+                <li>Система повторений</li>
+                <li>Отслеживание прогресса</li>
+            </ul>
+        </div>
+        -->
+        
+        <!-- Блок статистики (будет заполняться JavaScript) -->
+        <div id="stats" class="stats" style="display: none;">
+            <p>Вы уже изучили <span id="words-learned">0</span> слов</p>
+        </div>
     </div>
+
+    <!-- Подключение основного скрипта -->
     <script src="js/main.js"></script>
+    
+    <!-- Дополнительные скрипты (можно добавить позже) -->
+    <!-- <script src="js/analytics.js"></script> -->
 </body>
 </html>

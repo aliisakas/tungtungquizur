@@ -1,23 +1,57 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <!-- Базовые мета-теги -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>English Cards - слова</title>
+    
+    <!-- Подключение стилей -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <!-- Основной контейнер страницы -->
     <div class="card-container">
+        <!-- Заголовок страницы -->
         <h1>Изучение слов</h1>
+        
+        <!-- Контейнер для меню тем (будет добавлен динамически в JS) -->
+        <div id="topics-menu" class="topics-menu"></div>
+        
+        <!-- Карточка с содержимым -->
         <div class="card">
+            <!-- Блок для отображения слова -->
             <div class="word" id="word">Загрузка...</div>
+            
+            <!-- Блок для отображения перевода (изначально скрыт) -->
             <div class="translation" id="translation"></div>
+            
+            <!-- Блок с кнопками управления -->
             <div class="buttons">
-                <button id="show-translation">Показать перевод</button>
-                <button id="next-card">Следующая карточка</button>
+                <!-- Кнопка показа перевода -->
+                <button id="show-translation" class="card-button">Показать перевод</button>
+                
+                <!-- Кнопка перехода к следующей карточке -->
+                <button id="next-card" class="card-button">Следующая карточка</button>
+            </div>
+        </div>
+        
+        <!-- Контейнер для прогресс-бара (добавляется динамически) -->
+        <div id="progress-container" class="progress-container"></div>
+        
+        <!-- Модальное окно завершения темы (скрыто по умолчанию) -->
+        <div id="congrats-modal" class="modal">
+            <div class="modal-content">
+                <h2 id="congrats-title"></h2>
+                <p id="congrats-message"></p>
+                <button id="continue-btn">Продолжить</button>
             </div>
         </div>
     </div>
+
+    <!-- Подключение основного скрипта -->
     <script src="js/cards.js"></script>
+    
+   
 </body>
 </html>

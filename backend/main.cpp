@@ -31,14 +31,68 @@ int main() {
         // ловим ошибки чтения карточек
         try {
             cards = json::parse(file);
-        } catch (const std::exception& e) {
-            res.set_content(R"({"error": "Invalid JSON"})", "application/json");
+             // Для совместимости: возвращаем все карточки из всех тем
+             json all_cards = json::array();
+             if (cards.contains("topics")) {
+                 for (auto& [_, topic_cards] : cards["topics"].items()) {
+                     all_cards.insert(all_cards.end(), topic_cards.begin(), topic_cards.end());
+                 }
+             } else {
+                 all_cards = cards; // Старый формат без тем
+             }
+             res.set_content(all_cards.dump(), "application/json");
+         } catch (const std::exception& e) {
+             res.set_content(R"({"error": "Invalid JSON"})", "application/json");
+         }
+    });
+
+    // 2. Новый эндпоинт для списка тем
+    svr.Get("/api/topics", [](const httplib::Request& req, httplib::Response& res) {
+        res.set_header("Access-Control-Allow-Origin", "*");
+        
+        std::ifstream file("../data/cards.json");
+        if (!file.is_open()) {
+            res.set_content(R"({"error": "File not found"})", "application/json");
             return;
         }
 
-        //отправляем карточки клиенту
-        // .dump() - преобразование json-объекта (карточек) в строку 
-        res.set_content(cards.dump(), "application/json");
+        try {
+            json data = json::parse(file);
+            if (data.contains("topics")) {
+                std::vector<std::string> topics;
+                for (auto& [topic, _] : data["topics"].items()) {
+                    topics.push_back(topic);
+                }
+                res.set_content(json(topics).dump(), "application/json");
+            } else {
+                res.set_content(json::array().dump(), "application/json"); // Нет тем
+            }
+        } catch (const std::exception& e) {
+            res.set_content(R"({"error": "Invalid JSON"})", "application/json");
+        }
+    });
+
+    // 3. Новый эндпоинт для карточек темы
+    svr.Get("/api/cards/:topic", [](const httplib::Request& req, httplib::Response& res) {
+        res.set_header("Access-Control-Allow-Origin", "*");
+        
+        std::string topic = req.path_params.at("topic");
+        std::ifstream file("../data/cards.json");
+        if (!file.is_open()) {
+            res.set_content(R"({"error": "File not found"})", "application/json");
+            return;
+        }
+
+        try {
+            json data = json::parse(file);
+            if (data.contains("topics") && data["topics"].contains(topic)) {
+                res.set_content(data["topics"][topic].dump(), "application/json");
+            } else {
+                res.set_content(R"({"error": "Topic not found"})", "application/json");
+            }
+        } catch (const std::exception& e) {
+            res.set_content(R"({"error": "Invalid JSON"})", "application/json");
+        }
     });
 
     std::cout << "Server started at http://localhost:8080\n";

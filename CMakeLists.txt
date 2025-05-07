@@ -6,6 +6,9 @@ include_directories(
     ${PROJECT_SOURCE_DIR}/backend/include
 )
 
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 # Создаем исполняемый файл
 add_executable(server 
     backend/main.cpp

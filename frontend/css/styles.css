@@ -3,6 +3,7 @@
   Применяются к обеим страницам.
 */
 
+
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -33,7 +34,6 @@ button:hover {
     background: #2980b9;
 }
 
-/* Стили для страницы с карточками */
 .card-container {
     max-width: 600px;
     margin: 0 auto;
@@ -96,4 +96,88 @@ button:hover {
 
 #next-card:hover {
     background: #27ae60;
+}
+
+/* ======= НОВЫЕ СТИЛИ (ДОБАВЛЕНЫ СНИЗУ) ======= */
+
+/* Меню тем */
+.topics-container {
+    margin: 20px 0;
+}
+
+.topic-tab {
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 0 5px;
+    background: #ecf0f1;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.topic-tab:hover {
+    background: #bdc3c7;
+}
+
+.topic-tab.active {
+    background: #2ecc71;
+    color: white;
+}
+
+/* Анимации */
+@keyframes cardFlip {
+    0% { transform: rotateY(0); }
+    100% { transform: rotateY(360deg); }
+}
+
+.card-animate {
+    animation: cardFlip 0.6s ease;
+}
+
+/* Прогресс-бар */
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background: #ecf0f1;
+    border-radius: 3px;
+    margin: 15px 0;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #2ecc71;
+    border-radius: 3px;
+    width: 0%;
+    transition: width 0.4s;
+}
+
+/* Модальное окно */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
 }
