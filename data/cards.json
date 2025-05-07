@@ -1,25 +1,17 @@
 {
+    "topics": {
+      "food": [
+        {"id": 1, "word": "apple", "translation": "яблоко", "level": 1}
+     
+      ],
+      "animals": [
+        {"id": 8, "word": "cat", "translation": "кот", "level": 1}
+        
+      ]
+    },
     "topics_order": ["food", "animals"],
     "user_progress": {
       "current_topic": "food",
       "completed_topics": []
-    },
-    "food": [
-      {"id": 1, "word": "apple", "translation": "яблоко", "level": 1},
-      {"id": 2, "word": "banana", "translation": "банан", "level": 1},
-      {"id": 3, "word": "water", "translation": "вода", "level": 1},
-      {"id": 4, "word": "milk", "translation": "молоко", "level": 1},
-      {"id": 5, "word": "bread", "translation": "хлеб", "level": 1},
-      {"id": 6, "word": "tea", "translation": "чай", "level": 1},
-      {"id": 7, "word": "onigiri", "translation": "ониири", "level": 1}
-    ],
-    "animals": [
-      {"id": 8, "word": "cat", "translation": "кот", "level": 1},
-      {"id": 9, "word": "dog", "translation": "собака", "level": 1},
-      {"id": 10, "word": "elephant", "translation": "слон", "level": 1},
-      {"id": 11, "word": "frog", "translation": "лягушка", "level": 1},
-      {"id": 12, "word": "shark", "translation": "акула", "level": 1},
-      {"id": 13, "word": "fish", "translation": "рыба", "level": 1},
-      {"id": 14, "word": "bird", "translation": "птица", "level": 1}
-    ]
+    }
   }
