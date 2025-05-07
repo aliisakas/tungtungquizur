@@ -5,15 +5,6 @@
  * Никакой дополнительной логики не требуется.
  */
 
-// Ждем полной загрузки DOM
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('Главная страница загружена');
-    
-    // Можно добавить анимацию кнопки при желании
-    const startBtn = document.querySelector('.btn');
-    if (startBtn) {
-        startBtn.addEventListener('click', function() {
-            console.log('Переход на страницу карточек');
-        });
-    }
+document.getElementById('start-btn').addEventListener('click', function() {
+    window.location.href = 'cards.html';
 });

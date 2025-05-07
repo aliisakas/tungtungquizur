@@ -1,16 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <title>English Cards - Учим слова</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Cards - слова</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Карточки для изучения</h1>
-        <a href="index.html" class="btn-back">← На главную</a>
-        <div id="cards-container">
-            <!-- Карточки будут добавляться сюда через JavaScript -->
-            <div class="loading">Загрузка карточек...</div>
+    <div class="card-container">
+        <h1>Изучение слов</h1>
+        <div class="card">
+            <div class="word" id="word">Загрузка...</div>
+            <div class="translation" id="translation"></div>
+            <div class="buttons">
+                <button id="show-translation">Показать перевод</button>
+                <button id="next-card">Следующая карточка</button>
+            </div>
         </div>
     </div>
     <script src="js/cards.js"></script>
