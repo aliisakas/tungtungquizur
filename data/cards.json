@@ -1,52 +1,312 @@
 {
     "topics": {
       "food": [
-        {"id": 1, "word": "apple", "translation": "яблоко", "level": 1},
-        {"id": 2, "word": "banana", "translation": "банан", "level": 1},
-        {"id": 3, "word": "water", "translation": "вода", "level": 1},
-        {"id": 4, "word": "milk", "translation": "молоко", "level": 1},
-        {"id": 5, "word": "bread", "translation": "хлеб", "level": 1},
-        {"id": 6, "word": "tea", "translation": "чай", "level": 1},
-        {"id": 7, "word": "onigiri", "translation": "ониири", "level": 1},
-        {"id": 15, "word": "cheese", "translation": "сыр", "level": 1},
-        {"id": 16, "word": "coffee", "translation": "кофе", "level": 1}
+        {
+          "id": 1, 
+          "word": "apple", 
+          "translation": "яблоко", 
+          "progress": {
+            "interval": 0,
+            "nextReview": null
+          }
+        },
+        {
+          "id": 2, 
+          "word": "banana", 
+          "translation": "банан", 
+          "progress": {
+            "interval": 0,
+            "nextReview": null
+          }
+        },
+        {
+          "id": 3, 
+          "word": "water", 
+          "translation": "вода", 
+          "progress": {
+            "interval": 0,
+            "nextReview": null
+          }
+        },
+        {
+          "id": 4, 
+          "word": "milk", 
+          "translation": "молоко", 
+          "progress": {
+            "interval": 0,
+            "nextReview": null
+          }
+        },
+        {
+          "id": 5, 
+          "word": "bread", 
+          "translation": "хлеб", 
+          "progress": {
+            "interval": 0,
+            "nextReview": null
+          }
+        },
+        {
+          "id": 6, 
+          "word": "tea", 
+          "translation": "чай", 
+          "progress": {
+            "interval": 0,
+            "nextReview": null
+          }
+        },
+        {
+          "id": 7, 
+          "word": "onigiri", 
+          "translation": "ониири", 
+          "progress": {
+            "interval": 0,
+            "nextReview": null
+          }
+        },
+        {
+          "id": 15, 
+          "word": "cheese", 
+          "translation": "сыр", 
+          "progress": {
+            "interval": 0,
+            "nextReview": null
+          }
+        },
+        {
+          "id": 16, 
+          "word": "coffee", 
+          "translation": "кофе", 
+          "progress": {
+            "interval": 0,
+            "nextReview": null
+          }
+        }
       ],
       "animals": [
-        {"id": 8, "word": "cat", "translation": "кот", "level": 1},
-        {"id": 9, "word": "dog", "translation": "собака", "level": 1},
-        {"id": 10, "word": "elephant", "translation": "слон", "level": 1},
-        {"id": 11, "word": "frog", "translation": "лягушка", "level": 1},
-        {"id": 12, "word": "shark", "translation": "акула", "level": 1},
-        {"id": 13, "word": "fish", "translation": "рыба", "level": 1},
-        {"id": 14, "word": "bird", "translation": "птица", "level": 1},
-        {"id": 17, "word": "lion", "translation": "лев", "level": 1},
-        {"id": 18, "word": "butterfly", "translation": "бабочка", "level": 1}
+        {
+          "id": 8, 
+          "word": "cat", 
+          "translation": "кот", 
+          "progress": {
+            "interval": 0,
+            "nextReview": null
+          }
+        },
+        {
+          "id": 9, 
+          "word": "dog", 
+          "translation": "собака", 
+          "progress": {
+            "interval": 0,
+            "nextReview": null
+          }
+        },
+        {
+          "id": 10, 
+          "word": "elephant", 
+          "translation": "слон", 
+          "progress": {
+            "interval": 0,
+            "nextReview": null
+          }
+        },
+        {
+          "id": 11, 
+          "word": "frog", 
+          "translation": "лягушка", 
+          "progress": {
+            "interval": 0,
+            "nextReview": null
+          }
+        },
+        {
+          "id": 12, 
+          "word": "shark", 
+          "translation": "акула", 
+          "progress": {
+            "interval": 0,
+            "nextReview": null
+          }
+        },
+        {
+          "id": 13, 
+          "word": "fish", 
+          "translation": "рыба", 
+          "progress": {
+            "interval": 0,
+            "nextReview": null
+          }
+        },
+        {
+          "id": 14, 
+          "word": "bird", 
+          "translation": "птица", 
+          "progress": {
+            "interval": 0,
+            "nextReview": null
+          }
+        },
+        {
+          "id": 17, 
+          "word": "lion", 
+          "translation": "лев", 
+          "progress": {
+            "interval": 0,
+            "nextReview": null
+          }
+        },
+        {
+          "id": 18, 
+          "word": "butterfly", 
+          "translation": "бабочка", 
+          "progress": {
+            "interval": 0,
+            "nextReview": null
+          }
+        }
       ],
       "clothing": [
-        {"id": 19, "word": "shirt", "translation": "рубашка", "level": 1},
-        {"id": 20, "word": "jeans", "translation": "джинсы", "level": 1},
-        {"id": 21, "word": "hat", "translation": "шляпа", "level": 1},
-        {"id": 22, "word": "shoes", "translation": "обувь", "level": 1},
-        {"id": 23, "word": "dress", "translation": "платье", "level": 1}
+        {
+          "id": 19, 
+          "word": "shirt", 
+          "translation": "рубашка", 
+          "progress": {
+            "interval": 0,
+            "nextReview": null
+          }
+        },
+        {
+          "id": 20, 
+          "word": "jeans", 
+          "translation": "джинсы", 
+          "progress": {
+            "interval": 0,
+            "nextReview": null
+          }
+        },
+        {
+          "id": 21, 
+          "word": "hat", 
+          "translation": "шляпа", 
+          "progress": {
+            "interval": 0,
+            "nextReview": null
+          }
+        },
+        {
+          "id": 22, 
+          "word": "shoes", 
+          "translation": "обувь", 
+          "progress": {
+            "interval": 0,
+            "nextReview": null
+          }
+        },
+        {
+          "id": 23, 
+          "word": "dress", 
+          "translation": "платье", 
+          "progress": {
+            "interval": 0,
+            "nextReview": null
+          }
+        }
       ],
       "transport": [
-        {"id": 24, "word": "car", "translation": "машина", "level": 1},
-        {"id": 25, "word": "bus", "translation": "автобус", "level": 1},
-        {"id": 26, "word": "bicycle", "translation": "велосипед", "level": 1},
-        {"id": 27, "word": "plane", "translation": "самолёт", "level": 1},
-        {"id": 28, "word": "train", "translation": "поезд", "level": 1}
+        {
+          "id": 24, 
+          "word": "car", 
+          "translation": "машина", 
+          "progress": {
+            "interval": 0,
+            "nextReview": null
+          }
+        },
+        {
+          "id": 25, 
+          "word": "bus", 
+          "translation": "автобус", 
+          "progress": {
+            "interval": 0,
+            "nextReview": null
+          }
+        },
+        {
+          "id": 26, 
+          "word": "bicycle", 
+          "translation": "велосипед", 
+          "progress": {
+            "interval": 0,
+            "nextReview": null
+          }
+        },
+        {
+          "id": 27, 
+          "word": "plane", 
+          "translation": "самолёт", 
+          "progress": {
+            "interval": 0,
+            "nextReview": null
+          }
+        },
+        {
+          "id": 28, 
+          "word": "train", 
+          "translation": "поезд", 
+          "progress": {
+            "interval": 0,
+            "nextReview": null
+          }
+        }
       ],
       "emotions": [
-        {"id": 29, "word": "happy", "translation": "счастливый", "level": 1},
-        {"id": 30, "word": "sad", "translation": "грустный", "level": 1},
-        {"id": 31, "word": "angry", "translation": "злой", "level": 1},
-        {"id": 32, "word": "surprised", "translation": "удивлённый", "level": 1},
-        {"id": 33, "word": "tired", "translation": "уставший", "level": 1}
+        {
+          "id": 29, 
+          "word": "happy", 
+          "translation": "счастливый", 
+          "progress": {
+            "interval": 0,
+            "nextReview": null
+          }
+        },
+        {
+          "id": 30, 
+          "word": "sad", 
+          "translation": "грустный", 
+          "progress": {
+            "interval": 0,
+            "nextReview": null
+          }
+        },
+        {
+          "id": 31, 
+          "word": "angry", 
+          "translation": "злой", 
+          "progress": {
+            "interval": 0,
+            "nextReview": null
+          }
+        },
+        {
+          "id": 32, 
+          "word": "surprised", 
+          "translation": "удивлённый", 
+          "progress": {
+            "interval": 0,
+            "nextReview": null
+          }
+        },
+        {
+          "id": 33, 
+          "word": "tired", 
+          "translation": "уставший", 
+          "progress": {
+            "interval": 0,
+            "nextReview": null
+          }
+        }
       ]
     },
-    "topics_order": ["food", "animals", "clothing", "transport", "emotions"],
-    "user_progress": {
-      "current_topic": "food",
-      "completed_topics": []
-    }
-  }
+    "topics_order": ["food", "animals", "clothing", "transport", "emotions"]
+}

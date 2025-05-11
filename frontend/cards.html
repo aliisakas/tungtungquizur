@@ -18,6 +18,12 @@
             <div class="word" id="word">Загрузка...</div>
             <div class="translation" id="translation"></div>
             
+            <!-- Информация о повторении -->
+            <div class="repetition-info" id="repetition-info">
+                <div class="next-review">Следующее повторение: <span id="next-review-time">-</span></div>
+                <div class="interval">Текущий интервал: <span id="current-interval">-</span></div>
+            </div>
+            
             <!-- Прогресс-бар -->
             <div class="progress-container">
                 <div class="progress-bar">
@@ -29,9 +35,15 @@
             <!-- Кнопки управления -->
             <div class="buttons">
                 <button id="show-translation">Показать перевод</button>
-                <button id="next-card">Следующая карточка</button>
+                <div class="response-buttons" id="response-buttons" style="display: none;">
+                    <button class="response-btn wrong" id="wrong-btn">Не помню</button>
+                    <button class="response-btn correct" id="correct-btn">Помню</button>
+                </div>
             </div>
         </div>
+        
+        <!-- Кнопка сброса прогресса -->
+        <button id="reset-progress" class="reset-button">Сбросить прогресс</button>
         
         <!-- Модальное окно завершения -->
         <div id="congrats-modal" class="modal-overlay">

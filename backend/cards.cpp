@@ -25,6 +25,14 @@ void CardsManager::loadCards() {
     }
 }
 
+void CardsManager::saveCards() {
+    std::ofstream file("../data/cards.json");
+    if (!file.is_open()) {
+        throw std::runtime_error("Cannot open file for writing");
+    }
+    file << cards_data->dump(4);
+}
+
 std::shared_ptr<CardsManager> CardsManager::getInstance() {
     if (!instance) {
         instance = std::shared_ptr<CardsManager>(new CardsManager());
@@ -59,6 +67,37 @@ json CardsManager::getCardsByTopic(const std::string& topic) const {
         return (*cards_data)["topics"][topic];
     }
     throw std::runtime_error("Topic not found");
+}
+
+bool CardsManager::updateCardProgress(const std::string& topic, int cardId, const json& progress) {
+    if (!hasTopic(topic)) {
+        return false;
+    }
+
+    auto& topic_cards = (*cards_data)["topics"][topic];
+    for (auto& card : topic_cards) {
+        if (card["id"] == cardId) {
+            card["progress"]["interval"] = progress["interval"];
+            card["progress"]["nextReview"] = progress["nextReview"];
+            saveCards();
+            return true;
+        }
+    }
+    return false;
+}
+
+json CardsManager::getCardProgress(const std::string& topic, int cardId) const {
+    if (!hasTopic(topic)) {
+        throw std::runtime_error("Topic not found");
+    }
+
+    const auto& topic_cards = (*cards_data)["topics"][topic];
+    for (const auto& card : topic_cards) {
+        if (card["id"] == cardId) {
+            return card["progress"];
+        }
+    }
+    throw std::runtime_error("Card not found");
 }
 
 bool CardsManager::hasTopic(const std::string& topic) const {

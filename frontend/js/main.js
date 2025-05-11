@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
     /**
      * Загружает прогресс пользователя из localStorage
      * (Новая функция, не влияет на основной поток)
-     */
     function loadUserProgress() {
         try {
             const progress = localStorage.getItem('languageCardsProgress');
@@ -40,11 +39,11 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Ошибка загрузки прогресса:', error);
         }
     }
+    */
 
     /**
      * Создает кнопки быстрого доступа к темам
      * (Дополнительная функциональность)
-     */
     function createQuickAccessButtons() {
         const quickAccessContainer = document.createElement('div');
         quickAccessContainer.className = 'quick-access';
@@ -56,11 +55,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // Можно добавить кнопки для быстрого доступа
         document.querySelector('.app').appendChild(quickAccessContainer);
     }
+    */
 
     
     
-    // Загружаем прогресс пользователя (не блокирует основной функционал)
+    /** Загружаем прогресс пользователя (не блокирует основной функционал)
     loadUserProgress();
+    */
     
     /* 
      * По желанию можно раскомментировать:

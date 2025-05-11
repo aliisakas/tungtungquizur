@@ -13,6 +13,7 @@ namespace nlohmann {
     protected:
         CardsManager();
         void loadCards();
+        void saveCards();
 
     public:
         static std::shared_ptr<CardsManager> getInstance();
@@ -21,6 +22,10 @@ namespace nlohmann {
         json getAllCards() const;
         std::vector<std::string> getTopics() const;
         json getCardsByTopic(const std::string& topic) const;
+        
+        // Методы для работы с прогрессом
+        bool updateCardProgress(const std::string& topic, int cardId, const json& progress);
+        json getCardProgress(const std::string& topic, int cardId) const;
         
         // Дополнительные методы
         bool hasTopic(const std::string& topic) const;
