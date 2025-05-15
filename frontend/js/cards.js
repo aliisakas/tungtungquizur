@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const wordElement = document.getElementById('word');
     const translationElement = document.getElementById('translation');
     const showTranslationBtn = document.getElementById('show-translation');
+    const speakWordBtn = document.getElementById('speak-word');
     const responseButtons = document.getElementById('response-buttons');
     const wrongBtn = document.getElementById('wrong-btn');
     const correctBtn = document.getElementById('correct-btn');
@@ -28,6 +29,26 @@ document.addEventListener('DOMContentLoaded', () => {
         LONG: 30,      // 30 минут
         VERY_LONG: 1440 // 24 часа
     };
+
+    // Проверка поддержки Web Speech API
+if (!('speechSynthesis' in window)) {
+    console.warn('Web Speech API не поддерживается в этом браузере');
+    document.getElementById('speak-word').style.display = 'none';
+}
+
+// Функция озвучки слова
+function speakText(text, lang = 'en-US') {
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = lang;
+    utterance.rate = 0.9; // Скорость произношения (0.1-10)
+    utterance.pitch = 1; // Высота голоса (0-2)
+    
+    // Остановить текущее произношение, если есть
+    window.speechSynthesis.cancel();
+    
+    // Произнести слово
+    window.speechSynthesis.speak(utterance);
+}
 
     // Форматирование времени
     function formatTime(minutes) {
@@ -77,6 +98,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Настройка обработчиков событий
     function setupEventListeners() {
         showTranslationBtn.addEventListener('click', showTranslation);
+        speakWordBtn.addEventListener('click', () => {
+            if (cards.length === 0) return;
+            const card = cards[currentCardIndex];
+            speakText(card.word);
+        });
         wrongBtn.addEventListener('click', () => handleCardResponse(false));
         correctBtn.addEventListener('click', () => handleCardResponse(true));
         continueBtn.addEventListener('click', hideCongratsModal);

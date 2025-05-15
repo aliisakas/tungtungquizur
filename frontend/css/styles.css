@@ -235,3 +235,18 @@ p {
 .reset-button:hover {
     background: #7f8c8d;
 }
+
+#speak-word {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background 0.3s;
+}
+
+#speak-word:hover {
+    background: #2980b9;
+}
