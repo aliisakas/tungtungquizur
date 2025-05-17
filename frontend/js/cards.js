@@ -101,7 +101,9 @@ function speakText(text, lang = 'en-US') {
         speakWordBtn.addEventListener('click', () => {
             if (cards.length === 0) return;
             const card = cards[currentCardIndex];
-            speakText(card.word);
+            const utterance = new SpeechSynthesisUtterance(card.word);
+            utterance.lang = 'en-US';
+            window.speechSynthesis.speak(utterance);
         });
         wrongBtn.addEventListener('click', () => handleCardResponse(false));
         correctBtn.addEventListener('click', () => handleCardResponse(true));
@@ -189,6 +191,7 @@ function speakText(text, lang = 'en-US') {
                 responseButtons.style.display = 'none';
                 document.getElementById('repetition-info').style.display = 'none';
                 document.querySelector('.progress-container').style.display = 'none';
+                speakWordBtn.style.display = 'none';
                 return;
             }
             
@@ -234,6 +237,7 @@ function speakText(text, lang = 'en-US') {
         showTranslationBtn.style.display = 'block';
         updateProgress();
         updateRepetitionInfo(card);
+        speakWordBtn.style.display = 'inline-block';
     }
 
     // Обновление информации о повторении
@@ -286,6 +290,7 @@ function speakText(text, lang = 'en-US') {
             responseButtons.style.display = 'none';
             document.getElementById('repetition-info').style.display = 'none';
             document.querySelector('.progress-container').style.display = 'none';
+            speakWordBtn.style.display = 'none';
             return;
         }
         

@@ -15,7 +15,10 @@
         
         <!-- Основная карточка -->
         <div class="card">
-            <div class="word" id="word">Загрузка...</div>
+            <span id="word-container">
+                <span id="word">Загрузка...</span>
+                <span id="speak-word" title="Прослушать слово" style="display:none; cursor:pointer; margin-left:8px;">🔊</span>
+            </span>
             <div class="translation" id="translation"></div>
             
             <!-- Информация о повторении -->
@@ -35,7 +38,6 @@
             <!-- Кнопки управления -->
             <div class="buttons">
                 <button id="show-translation">Показать перевод</button>
-                <button id="speak-word">🔊 Произнести</button> <!-- Новая кнопка -->
                 <div class="response-buttons" id="response-buttons" style="display: none;">
                     <button class="response-btn wrong" id="wrong-btn">Не помню</button>
                     <button class="response-btn correct" id="correct-btn">Помню</button>

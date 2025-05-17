@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: #f5f5f5;
+    background-color: #f7fafd;
 }
 
 h1 {
@@ -46,24 +46,35 @@ p {
 
 /* Стили карточки */
 .card {
-    background: white;
-    border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background: #fff;
+    border-radius: 18px;
+    padding: 40px 32px;
+    box-shadow: 0 8px 32px rgba(44, 62, 80, 0.10), 0 1.5px 4px rgba(44, 62, 80, 0.08);
+    margin-bottom: 30px;
+    transition: box-shadow 0.2s;
 }
 
-.word {
-    font-size: 2rem;
+.card:hover {
+    box-shadow: 0 12px 40px rgba(44, 62, 80, 0.13), 0 2px 8px rgba(44, 62, 80, 0.10);
+}
+
+#word-container {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* расстояние между словом и микрофоном */
+}
+
+#word {
+    font-size: 2.5rem;
     font-weight: bold;
-    margin-bottom: 20px;
     color: #2c3e50;
 }
 
 .translation {
-    font-size: 1.5rem;
-    color: #3498db;
-    margin-bottom: 30px;
-    display: none;
+    font-size: 1.7rem;
+    color: #1976d2;
+    margin-bottom: 32px;
+    font-weight: 500;
 }
 
 /* Информация о повторении */
@@ -88,13 +99,15 @@ p {
     align-items: center;
 }
 
-.buttons button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: all 0.3s;
+.buttons button, .response-btn, #reset-progress {
+    font-size: 1.1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.04);
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+.buttons button:hover, .response-btn:hover, #reset-progress:hover {
+    box-shadow: 0 4px 16px rgba(44,62,80,0.10);
 }
 
 #show-translation {
@@ -142,15 +155,16 @@ p {
 
 .progress-bar {
     flex-grow: 1;
-    height: 8px;
+    height: 14px;
     background: #ecf0f1;
-    border-radius: 4px;
+    border-radius: 7px;
     overflow: hidden;
 }
 
 .progress-fill {
     height: 100%;
-    background: #2ecc71;
+    border-radius: 7px;
+    background: linear-gradient(90deg, #2ecc71 60%, #27ae60 100%);
     width: 0%;
     transition: width 0.4s ease;
 }
@@ -237,16 +251,20 @@ p {
 }
 
 #speak-word {
-    background: #3498db;
-    color: white;
+    background: none;
+    color: #3498db;
     border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+    padding: 0;
+    border-radius: 0;
+    font-size: 2.5rem; /* чтобы совпадал по высоте со словом */
     cursor: pointer;
-    margin: 5px;
-    transition: background 0.3s;
+    transition: color 0.2s;
+    line-height: 1;
+    display: flex;
+    align-items: center;
 }
 
 #speak-word:hover {
-    background: #2980b9;
+    color: #1976d2;
 }
+
